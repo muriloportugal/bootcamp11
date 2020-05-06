@@ -1,9 +1,12 @@
 //Importa o express
 const express = require('express');
 const { uuid, isUuid } = require('uuidv4');
+const cors = require('cors');
 
 //Cria uma instância do express
 const app = express();
+app.use(cors());
+
 //Faz com que o express entenda requisições com o corpo no formato JSON
 app.use(express.json());
 

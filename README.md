@@ -9,8 +9,9 @@ Repositório com os módulos e desafios do GoStack BootCamp 11.
 
 
 :ballot_box_with_check: Nível 1 - Back-end com Node.js  
-:ballot_box_with_check: Desafio 1 - Conceitos do Node.js  
-:arrow_forward: Nível 1 - Front-end com ReactJS  
+:ballot_box_with_check: Nível 1 - Desafio Conceitos do Node.js  
+:ballot_box_with_check: Nível 1 - Front-end com ReactJS  
+:arrow_forward: Nível 1 - Desafio Conceitos do ReactJS  
 
 ## :memo: Licença
 
