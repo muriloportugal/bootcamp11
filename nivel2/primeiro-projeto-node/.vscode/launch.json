@@ -1,0 +1,25 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      // attach no lugar de launch faz com que ao clicarmos no debug, ele se
+      // conecte na instância que já esta rodando, o lauch vai iniciar a
+      // aplicação quando clicamos para debugar.
+      "request": "attach",
+      // inspector
+      "protocol": "inspector",
+      "restart": true,
+      "name": "Debug",
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "outFiles": [
+        "${workspaceFolder}/**/*.js"
+      ]
+    }
+  ]
+}
