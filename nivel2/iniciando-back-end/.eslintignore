@@ -1,0 +1,4 @@
+// Lista dos arquivos que serão ignorados pelo eslint
+/*.js
+node_modules
+dist
