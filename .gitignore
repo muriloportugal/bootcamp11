@@ -4,6 +4,9 @@ bootcamp11-desafio4-conceitos-react-native
 bootcamp11-desafio5-primeiro-projeto-nodejs
 auth.ts
 
+tmp/*
+!tmp/.gitkeep
+
 # Logs
 logs
 *.log
