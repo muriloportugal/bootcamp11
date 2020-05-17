@@ -2,10 +2,12 @@ bootcamp11-desafio2-conceitos-node.js
 bootcamp11-desafio3-conceitos-reactJS
 bootcamp11-desafio4-conceitos-react-native
 bootcamp11-desafio5-primeiro-projeto-nodejs
+bootcamp11-desafio6-Banco-de-dados-e-upload-de-arquivos-no-nodejs
 auth.ts
 
 tmp/*
 !tmp/.gitkeep
+
 
 # Logs
 logs
