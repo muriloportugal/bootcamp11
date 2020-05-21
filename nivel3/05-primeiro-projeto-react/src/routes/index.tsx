@@ -13,8 +13,12 @@ const Routes: React.FC = () => (
   // dizer para acessar a rota raiz somente se o caminho for exatamente (exact) igual
   <Switch>
     <Route path="/" exact component={Dashboard} />
-    <Route path="/repository" component={Repository} />
+    <Route path="/repositories/:repository+" component={Repository} />
   </Switch>
+  // Necessário adicionar o + no final do :repository+ pois neste caso estamos
+  // recebendo um parâmetro nessa rota que utiliza uma barra invertida também "/"
+  // então o react-router-dom acha que é uma rota, para dizer pra ele considerar
+  // tudo oq vier depois de /repositories/... como parâmetro colocamos o +.
 );
 
 export default Routes;
