@@ -39,8 +39,12 @@ const Dashboard: React.FC = () => {
   }, [repositories]);
 
   async function handleAddRepository(
+    // Recebe o evento event do formulário, typescript exige que
+    // informamos qual o tipo do evento.
     event: FormEvent<HTMLFormElement>,
+    // Como essa função não tem retorno então ela é do tipo Promise<void>
   ): Promise<void> {
+    // Para o comportamento padrão do form de atualizar a página.
     event.preventDefault();
 
     if (!newRepo) {
