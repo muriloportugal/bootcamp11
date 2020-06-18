@@ -1,8 +1,15 @@
-import React, { InputHTMLAttributes, useEffect, useRef } from 'react';
+import React, {
+  InputHTMLAttributes,
+  useEffect,
+  useRef,
+  useState,
+  useCallback,
+} from 'react';
 import { IconBaseProps } from 'react-icons';
+import { FiAlertCircle } from 'react-icons/fi';
 import { useField } from '@unform/core';
 
-import { Container } from './styles';
+import { Container, Error } from './styles';
 
 // Cria essa interface herdando todos os atributos que um input normal receberia
 // e esta vai ser usada no nosso componente Container para podermos enviar as
@@ -15,7 +22,9 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest }) => {
-  const inputRef = useRef(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [isFocused, setIsFocused] = useState(false);
+  const [isFilled, setIsFilled] = useState(false);
   const { fieldName, defaultValue, error, registerField } = useField(name);
 
   useEffect(() => {
@@ -26,8 +35,21 @@ const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest }) => {
     });
   }, [fieldName, registerField]);
 
+  // Cria a função como useCallback para que ela seja criada uma única vez na memória
+  // mesmo que o componente renderize
+  const handleInputBlur = useCallback(() => {
+    setIsFocused(false);
+    // !! = transforma o retorno da variável em boleano, ou seja
+    // se tiver valor vai retornar verdadeiro, se não tiver valor retorna falso
+    setIsFilled(!!inputRef.current?.value);
+  }, []);
+
+  const handleInputFocus = useCallback(() => {
+    setIsFocused(true);
+  }, []);
+
   return (
-    <Container>
+    <Container isErrored={!!error} isFilled={isFilled} isFocused={isFocused}>
       {Icon && <Icon size={20} />}
       {
         // Recebo todas as propriedades que foram passadas para o meu elemento
@@ -35,7 +57,19 @@ const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest }) => {
         // interface de props são todos os atributos de um input do HTML (InputProps). Isso se
         // chama spreading. (foi criado uma regra no eslint para desabilitar o erro)
       }
-      <input ref={inputRef} {...rest} />
+      <input
+        onFocus={handleInputFocus}
+        onBlur={handleInputBlur}
+        defaultValue={defaultValue}
+        ref={inputRef}
+        {...rest}
+      />
+
+      {error && (
+        <Error title={error}>
+          <FiAlertCircle color="#c53030" size={20} />
+        </Error>
+      )}
     </Container>
   );
 };
