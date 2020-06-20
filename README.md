@@ -21,7 +21,8 @@ Repositório com os módulos e desafios do GoStack BootCamp 11.
 :ballot_box_with_check: Nível 2 - [Desafio Database upload](https://github.com/muriloportugal/bootcamp11-desafio6-Banco-de-dados-e-upload-de-arquivos-no-nodejs)  
 :ballot_box_with_check: Nível 3 - [Primeiro projeto com React](./nivel3/05-primeiro-projeto-react)  
 :ballot_box_with_check: Nível 3 - [Desafio Fundamentos ReactJS](https://github.com/muriloportugal/desafio7-gofinances-web)  
-:arrow_forward: Nível 3 - Iniciando front-end web
+:ballot_box_with_check: Nível 3 - [Iniciando front-end web](./nivel3/06-gobarber-web)  
+:arrow_forward: Nível 3 - Iniciando aplicativo mobile   
 ___
 
 ## :memo: Licença
